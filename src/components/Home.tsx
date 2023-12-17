@@ -3,6 +3,10 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 
+import Development from './Development'
+import Experience from './Experience'
+import Socials from './Socials'
+import Contact from './Contact'
 
 const Home = () => {
   const [selected, setSelected] = useState('Jaylen Garner')
@@ -26,18 +30,19 @@ const Home = () => {
 
     {/* Content */}
     <div className="absolute z-50 w-screen h-[100dvh] flex justify-center items-center">
-       <h1 className="text-xl">{selected}</h1>
+       <h1 className="text-xl font-bold">{selected}</h1>
 
         {/* Navigation */}
         <motion.div initial={{opacity: 0}}
            animate={{opacity: 1}}
            transition={{duration: 3, delay: 1}}>
-        <h2  className="absolute top-4 left-4 text-lg hover:cursor-pointer" onClick={() => setSelected('Software Engineer')}> Software Engineer</h2>
-        <h2 className="absolute top-4 right-4 text-lg" onClick={() => setSelected('Business')}>Business</h2>
-        <h2 className="absolute bottom-4 left-4 text-lg" onClick={() => setSelected('Socials')}>Socials</h2>
-        <h2 className="absolute bottom-4 right-4" onClick={() => setSelected('Contact')}>Contact</h2>
-        </motion.div>
 
+            <Experience />
+            <Development />
+            <Socials />
+            <Contact />
+
+        </motion.div>
     </div>
     </>
   )
