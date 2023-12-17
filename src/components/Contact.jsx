@@ -2,12 +2,14 @@ import { IoCalendarSharp, IoMailSharp } from 'react-icons/io5'
 
 import Link from 'next/link'
 
-const Contact = () => {
+const Contact = ({ setContent }) => {
   return (
     <div className='absolute bottom-4 left-4 flex space-x-4 opacity-70 items-center'>
-      <Link href={'mailto:jaylen@moonraydevelopment.com'} target='_blank'>
-        <IoMailSharp size='35px' className='hover:opacity-70 transition-opacity duration-700' />
-      </Link>
+      <IoMailSharp
+        onClick={() => setContent('Contact')}
+        size='35px'
+        className='hover:opacity-70 transition-opacity duration-700'
+      />
       <Link href={'https://calendly.com/jaylen-garner'} target='_blank'>
         <IoCalendarSharp size='35px' className='hover:opacity-70 transition-opacity duration-700' />
       </Link>

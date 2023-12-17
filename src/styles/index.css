@@ -6,7 +6,7 @@
   * {
     box-sizing: border-box;
   }
-  
+
   html,
   body,
   #__next {
@@ -16,4 +16,26 @@
     padding: 0;
     overflow: hidden;
   }
+}
+
+/* Form */
+
+.form_field {
+  @apply   p-2 bg-transparent border-white border border-opacity-30 rounded-md
+}
+
+.input {
+  @apply form_field h-12 w-full
+}
+
+.textarea {
+  @apply form_field  h-[200px] resize-none w-full
+}
+
+.button {
+  @apply form_field  h-14 mt-4 w-1/3 flex justify-center items-center  transition-all duration-700   hover:bg-opacity-80 hover:bg-white hover:text-black
+}
+
+.form_container {
+  @apply bg-[#89CFF0] bg-opacity-10 max-sm:max-h-[75dvh]  sm:w-[600px] sm:h-fit rounded-xl shadow-2xl  flex  flex-col items-center backdrop-blur-sm  p-8 space-y-8
 }
