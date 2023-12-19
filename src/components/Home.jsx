@@ -21,7 +21,7 @@ const Home = () => {
         className='absolute z-50 w-screen h-[100dvh] flex justify-center items-center bg-black'
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 1.5, delay: 0.5 }}></motion.div>
+        transition={{ duration: 1.5, delay: 1 }}></motion.div>
 
       <script src='/src/lib/reveal.js'></script>
 

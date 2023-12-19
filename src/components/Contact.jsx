@@ -8,7 +8,7 @@ const Contact = ({ setContent }) => {
       <IoMailSharp
         onClick={() => setContent('Contact')}
         size='35px'
-        className='hover:opacity-70 transition-opacity duration-700'
+        className='hover:opacity-70 transition-opacity duration-700 hover:cursor-pointer'
       />
       <Link href={'https://calendly.com/jaylen-garner'} target='_blank'>
         <IoCalendarSharp size='35px' className='hover:opacity-70 transition-opacity duration-700' />
