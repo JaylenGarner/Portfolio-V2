@@ -10,6 +10,8 @@
     "@react-three/drei": "^9.56.5",
     "@react-three/fiber": "^8.12.0",
     "@types/three": "^0.150.0",
+    "aws-sdk": "^2.1521.0",
+    "axios": "^1.6.2",
     "framer-motion": "^10.9.2",
     "glsl-random": "^0.0.5",
     "next": "^13.1.6",
@@ -44,7 +46,7 @@
     "lint": "yarn prettier && yarn eslint",
     "eslint": "next lint --fix --dir src",
     "prettier": "npx prettier --list-different \"./src/**/*.{ts,tsx,md}\" \"./app/**/*.{ts,tsx,md}\"\"",
-    "dev": "next dev --port 3002",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build"

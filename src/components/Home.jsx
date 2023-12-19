@@ -23,8 +23,6 @@ const Home = () => {
         animate={{ opacity: 0 }}
         transition={{ duration: 1.5, delay: 1 }}></motion.div>
 
-      <script src='/src/lib/reveal.js'></script>
-
       {/* Tint */}
       <div className='absolute z-30 w-screen h-screen bg-black bg-blend-darken opacity-50' />
 
