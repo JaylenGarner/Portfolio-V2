@@ -32,8 +32,8 @@ const ContactForm = () => {
   return (
     <>
       {!isComplete && (
-        <div className="form_container">
-          <h2 className="text-xl font-bold">Contact Me</h2>
+        <div className="card">
+          <h2 className="text-2xl font-bold">Contact Me</h2>
           <form
             className="flex flex-col justify-center items-center w-full space-y-4"
             onSubmit={(e) => handleSubmit(e)}

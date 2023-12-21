@@ -1,39 +1,46 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-import Development from './Development'
-import Experience from './Experience'
-import Socials from './Socials'
-import Contact from './Contact'
+import Development from "./Development";
+import Experience from "./Experience";
+import Socials from "./Socials";
+import Contact from "./Contact";
 
-import ContactForm from './ContactForm'
+import ContactForm from "./ContactForm";
+import WorkExperience from "./WorkExperience";
 
 const Home = () => {
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState("");
 
   return (
     <>
       {/* Reveal */}
       <motion.div
-        id='revealDiv'
-        className='absolute z-50 w-screen h-[100dvh] flex justify-center items-center bg-black'
+        id="revealDiv"
+        className="absolute z-50 w-screen h-[100dvh] flex justify-center items-center bg-black"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 1.5, delay: 1 }}></motion.div>
+        transition={{ duration: 1.5, delay: 1 }}
+      ></motion.div>
 
       {/* Tint */}
-      <div className='absolute z-30 w-screen h-screen bg-black bg-blend-darken opacity-50' />
+      <div className="absolute z-30 w-screen h-screen bg-black bg-blend-darken opacity-50" />
 
       {/* Content */}
-      <div className='absolute z-50 w-screen h-[100dvh] flex justify-center items-center'>
-        {!content && <h1 className='text-xl font-bold'>Jaylen Garner</h1>}
+      <div className="absolute z-50 w-screen h-[100dvh] flex justify-center items-center">
+        {!content && <h1 className="text-xl font-bold">Jaylen Garner</h1>}
 
-        {content === 'Contact' && <ContactForm />}
+        {content === "Contact" && <ContactForm />}
+        {content === "Experience" && <WorkExperience />}
 
         {/* Navigation */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 3, delay: 1 }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3, delay: 1 }}
+        >
           <Experience setContent={setContent} />
           <Development setContent={setContent} />
           <Socials />
@@ -41,7 +48,7 @@ const Home = () => {
         </motion.div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
