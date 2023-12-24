@@ -3,16 +3,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-import Development from "./Development";
-import Experience from "./Experience";
-import Socials from "./Socials";
-import Contact from "./Contact";
+import Navigation from "./Navigation";
 
 import ContactForm from "./ContactForm";
-import WorkExperience from "./WorkExperience";
+import Experience from "./Experience";
+import Certifications from "./Certifications";
+import Projects from "./Projects";
+import Project from "./Project";
 
 const Home = () => {
   const [content, setContent] = useState("");
+  const [currentProject, setCurrentProject] = useState({});
 
   return (
     <>
@@ -31,21 +32,17 @@ const Home = () => {
       {/* Content */}
       <div className="absolute z-50 w-screen h-[100dvh] flex justify-center items-center">
         {!content && <h1 className="text-xl font-bold">Jaylen Garner</h1>}
-
         {content === "Contact" && <ContactForm />}
-        {content === "Experience" && <WorkExperience />}
-
-        {/* Navigation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3, delay: 1 }}
-        >
-          <Experience setContent={setContent} />
-          <Development setContent={setContent} />
-          <Socials />
-          <Contact setContent={setContent} />
-        </motion.div>
+        {content === "Experience" && <Experience />}
+        {content === "Certifications" && <Certifications />}
+        {content === "Projects" && (
+          <Projects
+            setContent={setContent}
+            setCurrentProject={setCurrentProject}
+          />
+        )}
+        {content === "Project" && <Project project={currentProject} />}
+        <Navigation setContent={setContent} />
       </div>
     </>
   );

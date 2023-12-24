@@ -1,18 +1,39 @@
-import { FaBriefcase } from "react-icons/fa6";
-import { PiCertificateFill } from "react-icons/pi";
+import experience from "../lib/experience";
 
-const Experience = ({ setContent }) => {
+const Experience = () => {
   return (
-    <div className="absolute top-4 right-4 flex space-x-4 opacity-70 items-center">
-      <FaBriefcase
-        onClick={() => setContent("Experience")}
-        size="30px"
-        className="hover:opacity-70 hover:cursor-pointer transition-opacity duration-700"
-      />
-      <PiCertificateFill
-        size="35px"
-        className="hover:opacity-70 transition-opacity duration-700"
-      />
+    <div className="card">
+      <h2 className="text-2xl font-bold">Experience</h2>
+
+      <div className="flex flex-col">
+        {experience.map((position, i) => {
+          return (
+            <div className=" flex flex-col">
+              <h3 className="text-center text-xl font-bold">
+                {position.title}
+              </h3>
+
+              <a href={position.url} target="_blank">
+                <div className="flex items-center justify-center space-x-2 hover:opacity-60 transition-opacity duration-700">
+                  <h3 className="text-center text-lg font-bold underline-offset-2 underline">
+                    {position.company}
+                  </h3>
+                </div>
+              </a>
+
+              <h3 className="text-center text-md opacity-70 pt-1">
+                {position.tenure}
+              </h3>
+              <p className="pt-4">{position.description}</p>
+
+              {/* Divider */}
+              {i !== experience.length - 1 && (
+                <div className=" border-1 border-t border-white text-center mt-8 mb-8 border-opacity-10" />
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
